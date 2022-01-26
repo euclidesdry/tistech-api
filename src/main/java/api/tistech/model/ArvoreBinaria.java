@@ -1,5 +1,8 @@
 package api.tistech.model;
 
+import lombok.Data;
+
+@Data
 public class ArvoreBinaria {
 
 	private int valor;
@@ -8,33 +11,29 @@ public class ArvoreBinaria {
 	
 	
 
-	public int getValor() {
-		return valor;
-	}
+	// public int getValor() {
+	// 	return valor;
+	// }
 
-	public void setValor(int valor) {
-		this.valor = valor;
-	}
+	// public void setValor(int valor) {
+	// 	this.valor = valor;
+	// }
 
-	public ArvoreBinaria getEsquerda() {
-		return esquerda;
-	}
+	// public ArvoreBinaria getEsquerda() {
+	// 	return esquerda;
+	// }
 
-	public void setEsquerda(ArvoreBinaria esquerda) {
-		this.esquerda = esquerda;
-	}
+	// public void setEsquerda(ArvoreBinaria esquerda) {
+	// 	this.esquerda = esquerda;
+	// }
 
-	public ArvoreBinaria getDireita() {
-		return direita;
-	}
+	// public ArvoreBinaria getDireita() {
+	// 	return direita;
+	// }
 
-	public void setDireita(ArvoreBinaria direita) {
-		this.esquerda = esquerda;
-	}
-
-	public void setRight(ArvoreBinaria right) {
-		this.direita = direita;
-	}
+	// public void setDireita(ArvoreBinaria direita) {
+	// 	this.esquerda = esquerda;
+	// }
 	
 	 public static int somar(ArvoreBinaria arvoreBinaria) {
 	        if (arvoreBinaria == null) {
