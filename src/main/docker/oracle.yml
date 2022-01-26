@@ -1,0 +1,12 @@
+version: '2'
+services:
+    tistech-api-oracle:
+        build:
+            context: ./oracle
+        image: oracle-tistech:tistech-api
+        environment:
+            - DB_SID=TISTECH
+            - DBUSER=tistech
+            - DBPASSWORD=pass123
+        ports:
+            - 1521:1521
