@@ -3,6 +3,7 @@ package api.tistech.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Api
-@RequestMapping("")
+@RequestMapping("arvore")
 @Slf4j
 public class ArvoreBinaria {
 
