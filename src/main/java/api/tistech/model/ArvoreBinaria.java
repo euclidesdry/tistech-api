@@ -8,59 +8,33 @@ public class ArvoreBinaria {
 	private int valor;
 	private ArvoreBinaria esquerda;
 	private ArvoreBinaria direita;
-	
-	
 
-	// public int getValor() {
-	// 	return valor;
-	// }
+	public static int somar(ArvoreBinaria arvoreBinaria) {
+		if (arvoreBinaria == null) {
+			return 0;
+		}
 
-	// public void setValor(int valor) {
-	// 	this.valor = valor;
-	// }
+		return arvoreBinaria.getValor()
+				+ (arvoreBinaria.getDireita() == null ? 0 : somar(arvoreBinaria.getDireita()))
+				+ (arvoreBinaria.getEsquerda() == null ? 0 : somar(arvoreBinaria.getEsquerda()));
+	}
 
-	// public ArvoreBinaria getEsquerda() {
-	// 	return esquerda;
-	// }
+	public static ArvoreBinaria percorrer(ArvoreBinaria arvoreBinaria, int valor) {
 
-	// public void setEsquerda(ArvoreBinaria esquerda) {
-	// 	this.esquerda = esquerda;
-	// }
+		if (arvoreBinaria.getValor() == valor) {
+			return arvoreBinaria;
+		}
 
-	// public ArvoreBinaria getDireita() {
-	// 	return direita;
-	// }
+		if (arvoreBinaria.getEsquerda() != null) {
+			ArvoreBinaria ret = percorrer(arvoreBinaria.getEsquerda(), valor);
+			if (ret != null) {
+				return ret;
+			}
+		}
 
-	// public void setDireita(ArvoreBinaria direita) {
-	// 	this.esquerda = esquerda;
-	// }
-	
-	 public static int somar(ArvoreBinaria arvoreBinaria) {
-	        if (arvoreBinaria == null) {
-	            return 0;
-	        }
-
-	        return arvoreBinaria.getValor()
-	                + (arvoreBinaria.getDireita() == null ? 0 : somar(arvoreBinaria.getDireita()))
-	                + (arvoreBinaria.getEsquerda() == null ? 0 : somar(arvoreBinaria.getEsquerda()));
-	    }
-	    
-	    public static ArvoreBinaria percorrer(ArvoreBinaria arvoreBinaria, int valor) {
-
-	        if (arvoreBinaria.getValor() == valor) {
-	            return arvoreBinaria;
-	        }
-
-	        if (arvoreBinaria.getEsquerda() != null) {
-	            ArvoreBinaria ret = percorrer(arvoreBinaria.getEsquerda(), valor);
-	            if (ret != null) {
-	                return ret;
-	            }
-	        }
-
-	        if (arvoreBinaria.getEsquerda() != null) {
-	            return percorrer(arvoreBinaria.getDireita(), valor);
-	        }
-	        return null;
-	    }
+		if (arvoreBinaria.getEsquerda() != null) {
+			return percorrer(arvoreBinaria.getDireita(), valor);
+		}
+		return null;
+	}
 }

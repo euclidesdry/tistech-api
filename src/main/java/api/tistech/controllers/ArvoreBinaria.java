@@ -31,7 +31,7 @@ public class ArvoreBinaria {
 			@ApiResponse(code = 403, message = "Você não tem permissão para acessar essa funcionalidade!"),
 			@ApiResponse(code = 500, message = "Upppsss! Ocorreu um erro"),
 	})
-	@GetMapping(value = "/somarNos/{valor}", produces="application/json")
+	@GetMapping(value = "/somar-nos/{valor}", produces="application/json")
 	public int somarNos(@RequestBody api.tistech.model.ArvoreBinaria arvore, @PathVariable("valor") int valor) {
 		log.info("Serviço de soma acessado com sucesso!");
 		return arvoreBinariaService.somarAdjacente(arvore, valor);

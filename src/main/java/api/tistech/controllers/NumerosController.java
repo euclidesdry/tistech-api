@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Api
-@RequestMapping("numeros")
+@RequestMapping("")
 @Slf4j
 public class NumerosController {
 	
@@ -29,8 +29,9 @@ public class NumerosController {
 			@ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
 			@ApiResponse(code = 500, message = "Foi gerada uma exceção"),
 	})
-	@GetMapping(value = "/retornar-valor-C", produces="application/json")
-	public String terceiroC(@RequestBody ArvoreBinaria arvore, @RequestParam("a") String a, @RequestParam("b") String b) {
+	@GetMapping(value = "/retornar-valor-c", produces = "application/json")
+	// @RequestBody ArvoreBinaria arvore,
+	public String terceiroC(@RequestParam("a") String a, @RequestParam("b") String b) {
 		log.info("Iniciando serviço de Terceiro C!");
 		String c = numerosService.uniao(a, b);
 		log.info("Valor retornado de C = " + c);

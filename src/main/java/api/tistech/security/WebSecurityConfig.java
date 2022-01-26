@@ -20,8 +20,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/swagger-ui.html").permitAll()
 				.antMatchers(HttpMethod.GET, "/webjars/**").permitAll()
 				.antMatchers(HttpMethod.GET, "/swagger-resources/**").permitAll()
-				.antMatchers(HttpMethod.GET, "/somarNos/*").permitAll()
-				.antMatchers(HttpMethod.GET, "/retornarC").permitAll()
+				.antMatchers(HttpMethod.GET, "/arvore/somar-nos/*").permitAll()
+				.antMatchers(HttpMethod.GET, "/retornar-valor-c").permitAll()
 				.anyRequest().authenticated()
 				.and()
 
