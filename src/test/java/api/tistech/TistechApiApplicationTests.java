@@ -6,16 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import api.tistech.model.ArvoreBinaria;
-import api.tistech.service.ArvoreBinariaService;
 import api.tistech.service.NumerosService;
+// import api.tistech.service.SopaLetrasService;
 
 @SpringBootTest
 @AutoConfigureMockMvc
 class TistechApiApplicationTests {
 
-	@Autowired
-	ArvoreBinariaService arvoreBinariaService;
+	// @Autowired
+	// SopaLetrasService sopaLetras;
 
 	@Autowired
 	NumerosService numerosService;
@@ -25,62 +24,33 @@ class TistechApiApplicationTests {
 	}
 
 	@Test
-	void somarNos() throws Exception {
-
-		ArvoreBinaria noLadoEsquerdo = new ArvoreBinaria();
-		noLadoEsquerdo.setValor(2);
-
-		ArvoreBinaria noLadoDireito = new ArvoreBinaria();
-		noLadoDireito.setValor(4);
-
-		ArvoreBinaria arvoreBinaria = new ArvoreBinaria();
-		arvoreBinaria.setValor(9);
-
-		arvoreBinaria.setEsquerda(noLadoEsquerdo);
-		arvoreBinaria.setDireita(noLadoDireito);
-
-		int binaryReturn = arvoreBinariaService.somarAdjacente(arvoreBinaria, 9);
-
-		Assertions.assertEquals(6, binaryReturn);
+	void sopaLetras() throws Exception {
 	}
 
 	@Test
-	void errorSomarNos() throws Exception {
-
-		ArvoreBinaria noLadoEsquerdo = new ArvoreBinaria();
-		noLadoEsquerdo.setValor(2);
-
-		ArvoreBinaria noLadoDireito = new ArvoreBinaria();
-		noLadoDireito.setValor(4);
-
-		ArvoreBinaria arvoreBinaria = new ArvoreBinaria();
-		arvoreBinaria.setValor(9);
-
-		arvoreBinaria.setEsquerda(noLadoEsquerdo);
-		arvoreBinaria.setDireita(noLadoDireito);
-
-		int soma = arvoreBinariaService.somarAdjacente(arvoreBinaria, 9);
-
-		Assertions.assertFalse(soma != 6);
-	}
-
-	@Test
-	void terceiroNumero() throws Exception {
+	void menorQueUmMilhao() throws Exception {
 		String a = "102";
 		String b = "512";
 
 		String c = numerosService.uniao(a, b);
-
 		Assertions.assertEquals("150122", c);
 	}
 
 	@Test
-	void terceiroNumeroRetornaMenosUm() throws Exception {
+	void menorQueUmMilhaoAMenorQueB() throws Exception {
+		String a = "10";
+		String b = "5128";
+
+		String c = numerosService.uniao(a, b);
+		Assertions.assertEquals("150122", c);
+	}
+
+	@Test
+	void numeroMaiorQueUmMilhao() throws Exception {
 		String a = "10256";
 		String b = "512";
 
 		String c = numerosService.uniao(a, b);
-
 		Assertions.assertEquals("-1", c);
 	}
 }

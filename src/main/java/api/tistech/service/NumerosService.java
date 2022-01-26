@@ -9,13 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 public class NumerosService {
 
 	public static String uniao(String a, String b) {
-		log.info("Montando o terceiro(C)");
+		log.info("Unindo o terceiro(C)");
 		String resultado = unir(a, b, 0);
 		return Integer.parseInt(resultado) > 1_000_000 ? "-1" : resultado;
 	}
 
 	private static String unir(String a, String b, int cursor) {
-		log.info("Montando os caracters ...");
+		log.info("Unindo os caracters ...");
 
 		if (cursor == a.length() && b.length() == a.length()) {
 			return "";

@@ -2,13 +2,10 @@ package api.tistech.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import api.tistech.model.ArvoreBinaria;
 import api.tistech.service.NumerosService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiResponse;
@@ -32,9 +29,9 @@ public class NumerosController {
 	@GetMapping(value = "/retornar-valor-c", produces = "application/json")
 	// @RequestBody ArvoreBinaria arvore,
 	public String terceiroC(@RequestParam("a") String a, @RequestParam("b") String b) {
-		log.info("Iniciando serviço de Terceiro C!");
+		log.info("Iniciando funcionalidade C!");
 		String c = numerosService.uniao(a, b);
-		log.info("Valor retornado de C = " + c);
+		log.info("Retornando o valor de C = " + c);
 		return c;
 	}
 }
