@@ -7,14 +7,14 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 
 import api.tistech.service.NumerosService;
-// import api.tistech.service.SopaLetrasService;
+import api.tistech.service.JogoLocalizaPalavrasServiceImpl;
 
 @SpringBootTest
 @AutoConfigureMockMvc
 class TistechApiApplicationTests {
 
-	// @Autowired
-	// SopaLetrasService sopaLetras;
+	@Autowired
+	JogoLocalizaPalavrasServiceImpl jogoLocalizaPalavrasService;
 
 	@Autowired
 	NumerosService numerosService;
@@ -24,7 +24,11 @@ class TistechApiApplicationTests {
 	}
 
 	@Test
-	void sopaLetras() throws Exception {
+	void jogoLocalizaPalavras() throws Exception {
+		String palavraTest = "BAIXA";
+
+		Boolean palavra = jogoLocalizaPalavrasService.localiza(palavraTest);
+		Assertions.assertEquals(true, palavra);
 	}
 
 	@Test

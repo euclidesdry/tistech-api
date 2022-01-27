@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/swagger-ui.html").permitAll()
 				.antMatchers(HttpMethod.GET, "/webjars/**").permitAll()
 				.antMatchers(HttpMethod.GET, "/swagger-resources/**").permitAll()
-				.antMatchers(HttpMethod.GET, "/arvore/somar-nos/*").permitAll()
+				.antMatchers(HttpMethod.GET, "/**").permitAll()
 				.antMatchers(HttpMethod.GET, "/retornar-valor-c").permitAll()
 				.anyRequest().authenticated()
 				.and()
@@ -35,7 +35,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
-                .withUser("tistechApi").password("{noop}f$cE*sRv").roles("ADMIN");
+				.withUser("tistechApi").password("{noop}f$cE*sRv").roles("ADMIN");
 	}
 }
-
